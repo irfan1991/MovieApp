@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_latest"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Latest" />
+        <item
+            android:id="@+id/nav_new"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="New" />
+        <item
+            android:id="@+id/nav_ongoing"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="On Going" />
+
+    </group>
+
+    <group
+        android:id="@+id/menu_center"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_genres"
+            android:icon="@drawable/user"
+            android:title="Genres"
+            >
+        </item>
+    </group>
+
+
+    <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_refresh"
+            android:icon="@drawable/refresh"
+            android:title="Refresh"
+            >
+        </item>
+
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/bookmark"
+            android:title="Bookmark"
+            >
+        </item>
+        <item
+            android:id="@+id/nav_bugs"
+            android:icon="@drawable/bugs"
+            android:title="Bugs"
+            >
+        </item>
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="About">
+        </item>
+
+    </group>
+
+</menu>
