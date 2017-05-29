@@ -60,7 +60,7 @@ public class DetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(M.title);
+        getSupportActionBar().setTitle(MainActivity.title);
 
         list_episode = (ListView) findViewById(R.id.list_episode);
         progress_bar = (ProgressBar) findViewById(R.id.progress_bar);
@@ -83,16 +83,16 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
 
-        text_summary.setText(M.summary);
-        text_eps.setText(M.eps);
+        text_summary.setText(MainActivity.summary);
+        text_eps.setText(MainActivity.eps);
 
         Picasso.with(context)
-                .load(Server.cover + M.cover)
+                .load(Server.cover + MainActivity.cover)
                 .placeholder(R.drawable.no_image)
                 .error(R.drawable.no_preview)
                 .into(img_view);
-        Log.d("log Cover", Server.cover+M.cover);
-        link = Server.link+ "episode.php?video_id=" + M.video_id;
+        Log.d("log Cover", Server.cover+ MainActivity.cover);
+        link = Server.link+ "episode.php?video_id=" + MainActivity.video_id;
         Log.d("Log Link",link);
         AccessService();
     }
@@ -142,7 +142,7 @@ public class DetailActivity extends AppCompatActivity {
 
     public void AccessService() {
         DetailActivity.JsonReadTask task = new DetailActivity.JsonReadTask();
-        task.execute(new String[]{link});
+        task.execute(link);
     }
 
     public void JsonResponses(){
@@ -161,7 +161,7 @@ public class DetailActivity extends AppCompatActivity {
                 map.put("link", jsonChildNode.optString("link"));
                 map.put("view", jsonChildNode.optString("view"));
                 list.add(map);
-            };
+            }
 
             if(i > 0){
                 text_notif.setVisibility(View.GONE);
@@ -190,9 +190,9 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                M.episode_id = ((TextView) view.findViewById(R.id.text_episode_id)).getText().toString();
-                M.streaming = ((TextView) view.findViewById(R.id.text_link)).getText().toString();
-                Log.d("Log streaming", M.streaming);
+                MainActivity.episode_id = ((TextView) view.findViewById(R.id.text_episode_id)).getText().toString();
+                MainActivity.streaming = ((TextView) view.findViewById(R.id.text_link)).getText().toString();
+                Log.d("Log streaming", MainActivity.streaming);
 
 
                 ListMenu();
@@ -219,7 +219,7 @@ public class DetailActivity extends AppCompatActivity {
         text_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startActivity(new Intent(DetailActivity.this, StreamActivity.class));
+               startActivity(new Intent(DetailActivity.this, StreamingActivity.class));
                 alertDialog.dismiss();
             }
         });
