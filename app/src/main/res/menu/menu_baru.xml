@@ -4,6 +4,7 @@
     >
 <item
         android:id="@+id/List"
+        android:icon="@drawable/list"
         android:title="menu"
         app:showAsAction="always"
     />

@@ -20,6 +20,7 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.andaratech.movieapp.config.Server;
+import com.andaratech.movieapp.config.book;
 import com.squareup.picasso.Picasso;
 
 import org.apache.http.HttpResponse;
@@ -227,10 +228,10 @@ public class DetailActivity extends AppCompatActivity {
         text_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            /*    new book(context).execute(
+            new book(context).execute(
                         M.android_id, M.episode_id
 
-                ); */
+                );
 
                 alertDialog.dismiss();
             }
